@@ -5,6 +5,8 @@ on:
     branches:
       - develop
       - release/*
+      - feature
+      - feature/*
   pull_request:
     branches:
       - develop
@@ -24,7 +26,7 @@ jobs:
       - name: Checkstyle Шалгах
         run: mvn checkstyle:check
       - name: JUnit Тест ба JaCoCo Coverage Шалгах
-        run: mvn test
+        run: mvn clean test
       - name: JaCoCo Тайлан Үүсгэх
         run: mvn jacoco:report
 
